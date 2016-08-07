@@ -87,3 +87,10 @@ ENV/
 
 # Rope project settings
 .ropeproject
+.idea/WeChatAssistant.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/webResources.xml
+/main/instance/config.py
+/res/config.yml

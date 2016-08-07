@@ -9,11 +9,13 @@ from instance.config import Config
 
 
 class WechatHander(object):
-    def __init__(self, openid, data):
+    def __init__(self, openid, data, msgsignature=None, timestamp=None, nonce=None):
         self.openid = openid
         self.data = data
         self.wechat = Config().get_wechat()
-        self.wechat.parse_data(self.data)
+        if msgsignature is not None:
+            pass
+        self.wechat.parse_data(self.data, msg_signature=msgsignature, timestamp=timestamp, nonce=nonce)
         self.id = self.wechat.message.id  # 对应于 XML 中的 MsgId
         self.target = self.wechat.message.target  # 对应于 XML 中的 ToUserName
         self.source = self.wechat.message.source  # 对应于 XML 中的 FromUserName

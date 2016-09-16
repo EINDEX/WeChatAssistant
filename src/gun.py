@@ -9,8 +9,12 @@ import multiprocessing
 
 bind = '0.0.0.0:5000'
 
-workers = multiprocessing.cpu_count() * 2 + 1
-workers_class = 'gunicorn.workers.ggevent.GeventWorker'
+workers = 1
+workers_class = 'gevent'
+timeout = 120
+keepalive = 2
+
+preload = True
 
 x_forwarded_for_header = 'X-FORWARDED-FOR'
 

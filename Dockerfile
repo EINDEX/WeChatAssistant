@@ -6,8 +6,8 @@ WORKDIR /docker
 ADD requirements.txt requirements.txt
 RUN pip install -r requirements.txt -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
 
-WORKDIR /docker/src
+WORKDIR src
 
 EXPOSE 5000
 CMD ls
-ENTRYPOINT  gunicorn -k gevent -c gun.py --graceful-timeout 120 wsgi:app
+ENTRYPOINT  gunicorn -c gun.py wsgi

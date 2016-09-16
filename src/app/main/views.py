@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-from flask import request
+from flask import request, render_template
 
 from app import wechat
 from app.main import main
 from app.main.wechathander import WechatHander
+
+
+@main.route('/')
+def index():
+    return render_template('index.html')
 
 
 # 微信接口

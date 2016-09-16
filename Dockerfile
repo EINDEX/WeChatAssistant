@@ -10,4 +10,4 @@ WORKDIR /docker/src
 
 EXPOSE 5000
 CMD ls
-ENTRYPOINT  gunicorn -c gun.py wsgi:app
+ENTRYPOINT  gunicorn -k gevent -c gun.py --graceful-timeout 120 wsgi:app

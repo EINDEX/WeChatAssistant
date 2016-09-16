@@ -34,7 +34,7 @@ var/
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Unit test / coverage reports
+# Unit tests / coverage reports
 htmlcov/
 .tox/
 .coverage
@@ -92,5 +92,5 @@ ENV/
 .idea/modules.xml
 .idea/vcs.xml
 .idea/webResources.xml
-/main/instance/config.py
+/app/instance/config.py
 /res/config.yml

@@ -10,9 +10,9 @@ class Config:
     SECRET_KEY = os.getenv('SECRET_KEY')
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
     # WeChat Config Start
-    TOKEN = os.getenv('TOKEN','EINDEX'),
-    APPID = os.getenv('APPID', 'wx26f3489d4e74c850'),
-    APPSECRET = os.getenv('APPSECRET', 'dd2367d836fbc84a91fe65b4aef3b6e5'),
+    TOKEN = os.getenv('TOKEN'),
+    APPID = os.getenv('APPID'),
+    APPSECRET = os.getenv('APPSECRET'),
 
     @staticmethod
     def init_app(app):

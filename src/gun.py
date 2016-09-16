@@ -8,8 +8,6 @@ gevent.monkey.patch_all()
 import multiprocessing
 
 bind = '0.0.0.0:5000'
-pidfile = 'log/gunicorn.pid'
-logfile = 'log/debug.log'
 
 workers = multiprocessing.cpu_count() * 2 + 1
 workers_class = 'gunicorn.workers.ggevent.GeventWorker'

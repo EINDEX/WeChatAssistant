@@ -10,4 +10,4 @@ WORKDIR src
 
 EXPOSE 5000
 CMD ls
-ENTRYPOINT  gunicorn -c gun.py wsgi
+ENTRYPOINT  gunicorn -c gun.py wsgi:app

@@ -32,18 +32,40 @@ class WechatHander():
         self.row = self.message.raw  # 原始 XML 文本，方便进行其他分析
 
     def text_handler(self, content):
+        """
+
+        :param content:
+        :return:
+        """
         from app.main.api import tuling_robot_api
         return tuling_robot_api.send_message(info=content)
 
     def image_handler(self, picurl):
+        """
+
+        :param picurl:
+        :return:
+        """
         return '抱歉 我还没有拥有眼睛'
 
     def voice_handler(self, recognition):
+        """
+
+        :param recognition:
+        :return:
+        """
         from app.main.api import tuling_robot_api
-        return tuling_robot_api.send_message(info=recognition)
+        if recognition is not None:
+            return tuling_robot_api.send_message(info=recognition)
 
     def video_handler(self, media_id, thumb_midea_id):
-        return '影音消息'
+        """
+
+        :param media_id:
+        :param thumb_midea_id:
+        :return:
+        """
+        return None
 
     def location_handler(self, location, label):
         from .api import baidu_geo_coding_api,he_weather_api
@@ -51,7 +73,7 @@ class WechatHander():
         return he_weather_api.get_weather(city_name=location_json['addressComponent']['city'][:-1])
 
     def link_handler(self, title, description, url):
-        return '链接消息'
+        return None
 
     def event_handler(self, type, key=None, ticket=None):
         if type == 'subscribe':
@@ -59,9 +81,13 @@ class WechatHander():
                 pass
             return Config.WELCOME_TEXT
         elif type == 'unsubscribe':
-            pass
+            return None
 
     def type_handler(self):
+        """
+
+        :return:
+        """
         if isinstance(self.message, TextMessage):
             content = self.message.content
             return self.text_handler(content)

@@ -13,8 +13,10 @@ class TulingRobot():
             'info': info,
             'userid': user_id
         }
-        res_json = requests.get(self.API_URI, params=params).json()
+        res = requests.get(self.API_URI, params=params)
+        res_json = res.json()
         if res_json['code'] == 100000:
             return res_json['text']
         else:
-            return '我会记录此次错误'
+            print(res_json)
+            return res_json

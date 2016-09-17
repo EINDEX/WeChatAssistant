@@ -11,9 +11,14 @@
     - APPID
     - TOKEN
     - APPSECRET
+    
+- 天气
+    - HEWEATHER_KEY
+    - BAIDU_AK
 
 ## ToDoList:
 - 天气查询
+    - [Baidu GeoCoding API](http://lbsyun.baidu.com/index.php?title=webapi/guide/webservice-geocoding#.E6.9C.8D.E5.8A.A1.E5.9C.B0.E5.9D.80)
 - Google一下
 - 知乎一下
 - 未知手机号查询

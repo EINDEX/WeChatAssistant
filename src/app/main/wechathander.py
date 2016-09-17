@@ -8,7 +8,7 @@
 from app import wechat
 
 
-class WechatHander(object):
+class WechatHander():
     def __init__(self, openid, data, msgsignature=None, timestamp=None, nonce=None):
         self.openid = openid
         self.data = data

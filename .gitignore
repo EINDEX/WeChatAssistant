@@ -94,3 +94,6 @@ ENV/
 .idea/webResources.xml
 /app/instance/config.py
 /res/config.yml
+.idea/deployment.xml
+.idea/webServers.xml
+config.json

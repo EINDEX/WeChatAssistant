@@ -99,11 +99,8 @@ def text_reply(msg, user, *args):
             else:
                 flag = False
                 for result in data['results']:
-                    if flag:
-                        rmsg += '\n'
-                    rmsg += result['values'][result['resultType']]
+                    rmsg = '\n' * flag + result['values'][result['resultType']].replace('#{username}', user.name)
                     flag = True
-            print(params)
         return rmsg
     except:
         return '链接灵零失败'

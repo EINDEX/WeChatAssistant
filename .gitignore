@@ -97,3 +97,6 @@ ENV/
 .idea/deployment.xml
 .idea/webServers.xml
 config.json
+db.sqlite
+.idea/dataSources.local.xml
+.idea/dataSources/

@@ -5,6 +5,8 @@ idna==2.5
 itchatmp==0.0.12
 pyasn1==0.2.3
 pycparser==2.17
+PyMySQL==0.7.10
 requests==2.13.0
 six==1.10.0
+SQLAlchemy==1.1.6
 tornado==4.4.2

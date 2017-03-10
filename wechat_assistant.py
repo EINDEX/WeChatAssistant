@@ -99,7 +99,7 @@ def text_reply(msg, user, *args):
             else:
                 flag = False
                 for result in data['results']:
-                    rmsg = '\n' * flag + result['values'][result['resultType']].replace('#{username}', user.name)
+                    rmsg = '\n' * flag + result['values'][result['resultType']].replace('#{userName}', user.name)
                     flag = True
         return rmsg
     except:

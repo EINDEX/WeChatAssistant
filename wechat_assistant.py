@@ -57,7 +57,9 @@ def user_command(func):
                 user.name = msg['Content'].strip()
                 result = f'你的名字设置为: {user.name}, 以后需要修改，请发送 \\name_<你的新名字>'
         else:
-            result = '请输入你的用户名:'
+            user = models.User(wechat_id=msg['FromUserName'])
+            db.add(user)
+            result = '初次见面，你的名字是？'
         db.commit()
         db.close()
         return result
